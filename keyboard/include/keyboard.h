@@ -93,14 +93,14 @@ private:
     std::vector<std::string> keytext_eng ={
         "~\n`", "!\n1", "@\n2", "#\n3", "$\n4", "%\n5", "^\n6", "&&\n7", "*\n8", "(\n9", ")\n0", "_\n-", "+\n=", "Backspace",
         "Tab", "Q\nq", "W\nw", "E\ne", "R\nr", "T\nt", "Y\ny", "U\nu", "I\ni", "O\no", "P\np", "{\n[", "}\n]", "\\ \n |",
-        "Caps", "A\na", "S\ns", "D\nd", "F\nf", "G\ng", "H\nh", "J\nj", "K\nk", "L\nl", ":\n;", "\n''", "Enter",
+        "Caps", "A\na", "S\ns", "D\nd", "F\nf", "G\ng", "H\nh", "J\nj", "K\nk", "L\nl", ":\n;", "\"\n''", "Enter",
         "Shift", "Z\nz", "X\nx", "C\nc", "V\nv", "B\nb", "N\nn", "M\nm", "<\n,", ">\n.", "?\n/", "Shift",
         "Ctrl", "Win", "Alt", "Space", "Kor", "Win", "Menu", "Ctrl"
     };
     std::vector<std::string> keytext_kor ={
         "~\n`", "!\n1", "@\n2", "#\n3", "$\n4", "%\n5", "^\n6", "&&\n7", "*\n8", "(\n9", ")\n0", "_\n-", "+\n=", "Backspace",
         "Tab", "ㅂ", "ㅈ", "ㄷ", "ㄱ", "ㅅ", "ㅛ", "ㅕ", "ㅑ", "ㅒ\nㅐ", "ㅖ\nㅔ", "{\n[", "}\n]", "\\ \n |",
-        "Caps", "ㅁ", "ㄴ", "ㅇ", "ㄹ", "ㅎ", "ㅗ", "ㅓ", "ㅏ", "ㅣ", ":\n;", "\n''", "Enter",
+        "Caps", "ㅁ", "ㄴ", "ㅇ", "ㄹ", "ㅎ", "ㅗ", "ㅓ", "ㅏ", "ㅣ", ":\n;", "\"\n''", "Enter",
         "Shift", "ㅋ", "ㅌ", "ㅊ", "ㅍ", "ㅠ", "ㅜ", "ㅡ", ",", ".", "/", "Shift",
         "Ctrl", "Win", "Alt", "Space", "영어", "Win", "Menu", "Ctrl"
     };
