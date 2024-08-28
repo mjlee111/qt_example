@@ -22,8 +22,11 @@
 #### Prerequisites
 
 - CMake
-- Qt 5 or Qt 6
+- Qt 5 or Qt 6 -> [Qt Docs][qtlink]
 - X11 & XTest (required only for Linux)
+    ```bash
+    $ sudo apt-get install libx11-dev libxtst-dev
+    ```
 
 #### Build and Run
 
@@ -74,9 +77,9 @@ Feel free to submit issues, feature requests, and pull requests to improve the p
 ## License
 This project is licensed under the MIT License - see the [LICENSE][LICENSE] file for details.
 
-[LICENSE]: https://github.com/mjlee111/qt_example/blob/master/LICENSE
-
 ## Contact
 For any questions or feedback, please contact [menggu1234@naver.com][email].
 
+[qtlink]: https://doc.qt.io/
+[LICENSE]: https://github.com/mjlee111/qt_example/blob/master/LICENSE
 [email]: mailto:menggu1234@naver.com
