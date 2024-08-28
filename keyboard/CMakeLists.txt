@@ -7,13 +7,19 @@ project(keyboard VERSION 1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Find the Qt package (Qt5 or Qt6)
-find_package(Qt6 COMPONENTS Widgets REQUIRED)
-if(NOT Qt6_FOUND)
+# Try to find Qt6 first, if not found, try Qt5
+find_package(Qt6 COMPONENTS Widgets QUIET)
+if(Qt6_FOUND)
+    set(QT_VERSION_MAJOR 6)
+    message(STATUS "Found Qt6: ${Qt6_VERSION}")
+else()
     find_package(Qt5 COMPONENTS Widgets REQUIRED)
     set(QT_VERSION_MAJOR 5)
-else()
-    set(QT_VERSION_MAJOR 6)
+    message(STATUS "Found Qt5: ${Qt5_VERSION}")
+endif()
+
+if(NOT Qt5_FOUND AND NOT Qt6_FOUND)
+    message(FATAL_ERROR "Qt5 or Qt6 not found. Please install Qt.")
 endif()
 
 # Include directories

@@ -57,6 +57,7 @@ private:
     void handleEnter();
     void handleCapsLock();
     void handleWindows();
+    void handleSpace();
     void updateCapsLockButtonStyle();
     void connectAllButtons();
 

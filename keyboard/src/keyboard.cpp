@@ -61,7 +61,7 @@ void keyboard::connectAllButtons() {
         if (button) {
             buttons.append(button);
         } else {
-            qWarning() << "Button not found:" << buttonName;
+            std::cout << "Button not found:" << buttonName.toStdString() << std::endl;
         }
     }
 
@@ -100,7 +100,10 @@ void keyboard::handleButtonClick(QPushButton* button) {
         return;
     } else if (text == "Win") {
         handleWindows();
-    } else if (text == "Kor" || text == "영어") {
+    } else if (text == "Space") {
+        handleSpace();
+    }
+    else if (text == "Kor" || text == "영어") {
         return;
     } else if (text == "Ctrl" || text == "Alt" || text == "Menu") {
         return;
@@ -160,6 +163,13 @@ void keyboard::handleWindows() {
 #endif
 }
 
+void keyboard::handleSpace()
+{
+    QString currentText = ui->textLabel->text();
+    currentText.chop(1);
+    ui->textLabel->setText(currentText + " " + "_");
+}
+
 void keyboard::appendTextToLabel(const std::string& text) {
     QString textQString = QString::fromStdString(text);
     QStringList parts = textQString.split('\n');
@@ -195,7 +205,7 @@ void keyboard::changeLang() {
         if (button) {
             buttons.append(button);
         } else {
-            qWarning() << "Button not found:" << buttonName;
+            std::cout << "Button not found:" << buttonName.toStdString() << std::endl;
         }
     }
     std::vector<std::string> keytext = lang ? keytext_eng : keytext_kor;
