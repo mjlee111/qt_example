@@ -84,5 +84,15 @@ if(WIN32)
 elseif(UNIX)
     # Linux-specific settings
     find_package(X11 REQUIRED)
-    target_link_libraries(${PROJECT_NAME} X11::X11)
+
+    # Find XTest using pkg-config
+    find_package(PkgConfig REQUIRED)
+    pkg_search_module(XTEST REQUIRED xtst)
+
+    # Include directories and link libraries
+    include_directories(${XTEST_INCLUDE_DIRS})
+    target_link_libraries(${PROJECT_NAME} ${X11_LIBRARIES} ${XTEST_LIBRARIES})
+
+    # Add CMake modules path if needed
+    list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 endif()
