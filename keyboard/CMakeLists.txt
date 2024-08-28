@@ -1,45 +1,43 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(keyboard LANGUAGES CXX)
+# Project name
+project(keboard VERSION 1.0 LANGUAGES CXX)
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
-
+# Set C++ standard
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# QtCreator supports the following variables for Android, which are identical to qmake Android variables.
-# Check http://doc.qt.io/qt-5/deployment-android.html for more information.
-# They need to be set before the find_package(Qt5 ...) call.
-
-#if(ANDROID)
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-#    if (ANDROID_ABI STREQUAL "armeabi-v7a")
-#        set(ANDROID_EXTRA_LIBS
-#            ${CMAKE_CURRENT_SOURCE_DIR}/path/to/libcrypto.so
-#            ${CMAKE_CURRENT_SOURCE_DIR}/path/to/libssl.so)
-#    endif()
-#endif()
-
+# Find the Qt5 package
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-if(ANDROID)
-  add_library(keyboard SHARED
-    main.cpp
-    keyboard.cpp
-    keyboard.h
-    keyboard.ui
-  )
-else()
-  add_executable(keyboard
-    main.cpp
-    keyboard.cpp
-    keyboard.h
-    keyboard.ui
-  )
-endif()
+# Include directories
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_BINARY_DIR})
 
-target_link_libraries(keyboard PRIVATE Qt5::Widgets)
+# Source files
+set(SOURCES
+    src/main.cpp
+    src/keyboard.cpp
+)
+
+# Header files
+set(HEADERS
+    include/keyboard.h
+)
+
+# UI files
+set(UI_FILES
+    ui/keyboard.ui
+)
+
+# Generate MOC files
+qt5_wrap_cpp(MOC_SOURCES ${HEADERS})
+
+# Generate UIC files
+qt5_wrap_ui(UIC_SOURCES ${UI_FILES})
+
+# Add the executable
+add_executable(${PROJECT_NAME} ${SOURCES} ${MOC_SOURCES} ${UIC_SOURCES})
+
+# Link the Qt5 Widgets library
+target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
+
