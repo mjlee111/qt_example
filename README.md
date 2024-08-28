@@ -4,6 +4,9 @@
 
 ## Table of Contents
 - [Keyboard](#keyboard)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 ## Keyboard
 ### Features
