@@ -54,8 +54,11 @@
     - Windows
 
     Double-click the executable generated after building, or run it from the Command Prompt.
-   
+
+<div align=center>
+
 ![keyboard-run-image](https://github.com/mjlee111/qt_example/blob/master/keyboard/docs/run.png)
+</div>
 
 #### Usage
 - **Text Input**: Click on the buttons to input text. Special keys like Backspace, Tab, and Enter perform their respective functions.
