@@ -64,7 +64,7 @@
 
 <div align=center>
 
-![keyboard-run-image](https://github.com/mjlee111/qt_example/blob/master/Keyboard/docs/run.png)
+![keyboard-run-image](https://github.com/mjlee111/qt_example/blob/master/keyboard/docs/run.png)
 </div>
 
 #### Usage
