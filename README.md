@@ -122,10 +122,12 @@
 
     Double-click the executable generated after building, or run it from the Command Prompt.
 
+    - Simple test with arduino. (returns NONE when no data to read, READ: ${DATA} when data available per 1 seconds.)
 <div align=center>
 
 ![Serial-run-image](https://github.com/mjlee111/qt_example/blob/master/Serial/docs/run.gif)
 </div>
+
 
 ## Usage
 
