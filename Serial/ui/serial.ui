@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>590</width>
-    <height>600</height>
+    <height>620</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -227,6 +227,22 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </property>
     <property name="text">
      <string>Clear when write</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="copyright">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>600</y>
+      <width>250</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string> ©github.com.mjlee111/qt_example/Serial</string>
     </property>
    </widget>
   </widget>
