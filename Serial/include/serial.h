@@ -38,13 +38,15 @@ private slots:
   void on_rate_currentIndexChanged(int index);
   void on_device_btn_clicked();
   void on_clear_btn_clicked();
-  void on_auto_scroll_checkStateChanged(const Qt::CheckState &arg1);
+  // void on_auto_scroll_checkStateChanged(const Qt::CheckState &arg1);
+  // void on_clear_write_checkStateChanged(const Qt::CheckState &arg1);
+  void on_auto_scroll_stateChanged(int arg1);
+  void on_clear_write_stateChanged(int arg1);
+
   void on_write_btn_clicked();
 
   void resetRxLabelColor();
   void resetTxLabelColor();
-
-  void on_clear_write_checkStateChanged(const Qt::CheckState &arg1);
 
 private:
   Ui::Serial *ui;

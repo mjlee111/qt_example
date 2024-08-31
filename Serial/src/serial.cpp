@@ -172,13 +172,13 @@ void Serial::on_rate_currentIndexChanged(int index) {
   baud_rate = ui->rate->itemData(index).toInt();
 }
 
-void Serial::on_auto_scroll_checkStateChanged(const Qt::CheckState &arg1) {
-  autoScroll = arg1;
-}
+// void Serial::on_auto_scroll_checkStateChanged(const Qt::CheckState &arg1) {
+//   autoScroll = arg1;
+// }
 
-void Serial::on_clear_write_checkStateChanged(const Qt::CheckState &arg1) {
-  clearWrite = arg1;
-}
+// void Serial::on_clear_write_checkStateChanged(const Qt::CheckState &arg1) {
+//   clearWrite = arg1;
+// }
 
 void Serial::on_write_btn_clicked() {
   ui->tx->setStyleSheet("QLabel {background-color: rgb(0, 0, 254)}");
@@ -206,3 +206,14 @@ void Serial::appendToTextEdit(QTextEdit *textEdit,
         textEdit->verticalScrollBar()->maximum());
   }
 }
+
+void Serial::on_auto_scroll_stateChanged(int arg1)
+{
+    autoScroll = arg1;
+}
+
+void Serial::on_clear_write_stateChanged(int arg1)
+{
+    clearWrite = arg1;
+}
+
