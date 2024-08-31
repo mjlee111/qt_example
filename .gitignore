@@ -1,8 +1,9 @@
 
 .vscode/
 
-keyboard/build/
-
-keyboard/CMakeLists.txt.user
+Keyboard/build/
+Keyboard/CMakeLists.txt.user
+Serial/build/
+Serial/CMakeLists.txt.user
 
 *.user
