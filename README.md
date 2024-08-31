@@ -124,7 +124,7 @@
 
 <div align=center>
 
-![Serial-run-image](https://github.com/mjlee111/qt_example/blob/master/Serial/docs/run.png)
+![Serial-run-image](https://github.com/mjlee111/qt_example/blob/master/Serial/docs/run.gif)
 </div>
 
 ## Usage
