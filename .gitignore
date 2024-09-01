@@ -5,5 +5,7 @@ Keyboard/build/
 Keyboard/CMakeLists.txt.user
 Serial/build/
 Serial/CMakeLists.txt.user
+Astar/build/
+Astar/CMakeLists.txt.user
 
 *.user
