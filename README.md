@@ -5,6 +5,7 @@
 ## Table of Contents
 - [Keyboard](#keyboard)
 - [Serial](#serial)
+- [Astar](#Astar)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -129,7 +130,7 @@
 </div>
 
 
-## Usage
+#### Usage
 
 - **Connect to Serial Device:**
     * Select a serial port from the dropdown menu.
@@ -149,6 +150,81 @@
 
 - **Clear Display:**
     * Click the "CLEAR" button to clear the data from the display
+
+## A* Pathfinding
+### Features
+- **Grid-Based Pathfinding**: Implements the A* pathfinding algorithm to find the shortest path on a grid.
+- **Dynamic Grid Visualization**: Displays a dynamic grid in the GUI where users can set obstacles, start, and end points.
+- **Interactive Controls**: Allows users to interactively set the start and end points and obstacles through the UI.
+- **Path Display**: Visualizes the calculated shortest path in the grid using color-coding.
+- **Error Handling**: Provides feedback when a valid path cannot be found or if the start and end points are not set.
+
+### Installation and Running
+#### Prerequisites
+
+- CMake
+- Qt 5 or Qt 6 -> [Qt Docs][qtlink]
+- For Windows: Ensure the Qt installation includes the necessary Qt modules.
+- For Linux: Install the relevant Qt packages.
+
+#### Build and Run
+
+1. **Clone the Source Code**
+    ```bash
+    git clone https://github.com/mjlee111/qt_example.git
+    ```
+
+2. **Build**
+   
+    - **Linux**
+    ```bash
+    cd qt_example/Astar
+    mkdir build && cd build
+    cmake ..
+    make
+    ```
+    - **Windows**
+    ```bash
+    cd qt_example/Astar
+    mkdir build && cd build
+    cmake -G "Visual Studio 16 2019" ..
+    cmake --build . --config Release
+    ```
+
+3. **Run**
+    - **Linux**
+    ```bash
+    ./astar
+    ```
+    - **Windows**  
+      Double-click the executable generated after building, or run it from the Command Prompt.
+
+<div align="center">
+    <img src="https://github.com/mjlee111/qt_example/blob/master/Astar/docs/run.gif" alt="Astar-run-image">
+</div>
+
+### Usage
+
+- **Initialize Grid:**
+  - Set the number of rows and columns using the provided input fields.
+  - Click "Generate" to create the grid.
+
+- **Set Start and End Points:**
+  - Click "Set Start" and select a cell to define the starting point (marked in green).
+  - Click "Set End" and select a cell to define the ending point (marked in red).
+
+- **Place Obstacles:**
+  - Click on any cell to toggle obstacles (marked in black).
+
+- **Find Path:**
+  - Click "Start A*" to execute the A* algorithm and display the shortest path (highlighted in blue).
+
+- **Clear Grid:**
+  - Click the "Reset" button to clear all points, obstacles, and reset the grid.
+
+- **Error Feedback:**
+  - If no valid path is found or if the start/end points are not set, a message will be displayed.
+
 
 ## Contributing
 Feel free to submit issues, feature requests, and pull requests to improve the package.
