@@ -10,18 +10,19 @@
 #include <QVector>
 #include <iostream>
 
-
 QT_BEGIN_NAMESPACE
-namespace Ui {
+namespace Ui
+{
 class mainwindow;
 }
 QT_END_NAMESPACE
 
-class mainwindow : public QMainWindow {
+class mainwindow : public QMainWindow
+{
   Q_OBJECT
 
 public:
-  mainwindow(QWidget *parent = nullptr);
+  mainwindow(QWidget* parent = nullptr);
   ~mainwindow();
 
 private slots:
@@ -32,19 +33,18 @@ private slots:
   void on_reset_clicked();
 
 private:
-  Ui::mainwindow *ui;
+  Ui::mainwindow* ui;
 
-  QVector<QVector<int>> map; // 0: empty, 1: obstacle, 2: start, 3: end
+  QVector<QVector<int>> map;  // 0: empty, 1: obstacle, 2: start, 3: end
   QPoint startPoint;
   QPoint endPoint;
 
   void initializeMap(int rows, int cols);
   void drawGrid(int rows, int cols);
-  void replacePoint(int pointType, int newRow, int newCol,
-                    const QString &color);
+  void replacePoint(int pointType, int newRow, int newCol, const QString& color);
   void findPath();
 
   bool isSetStart = false;
   bool isSetEnd = false;
 };
-#endif // MAINWINDOW_HPP
+#endif  // MAINWINDOW_HPP
