@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>620</height>
+    <height>630</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -59,10 +59,7 @@ color: rgb(255, 255, 255)</string>
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Shape::Box</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
+     <enum>QFrame::NoFrame</enum>
     </property>
     <property name="text">
      <string>Col :</string>
@@ -78,10 +75,7 @@ color: rgb(255, 255, 255)</string>
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Shape::Box</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
+     <enum>QFrame::NoFrame</enum>
     </property>
     <property name="text">
      <string>Row :</string>
@@ -153,7 +147,7 @@ color: rgb(255, 255, 255)</string>
      <rect>
       <x>10</x>
       <y>597</y>
-      <width>250</width>
+      <width>311</width>
       <height>16</height>
      </rect>
     </property>

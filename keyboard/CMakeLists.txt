@@ -49,22 +49,12 @@ set(RESOURCE_FILES
 # Generate MOC files
 if(QT_VERSION_MAJOR EQUAL 6)
     qt6_wrap_cpp(MOC_SOURCES ${HEADERS})
-else()
-    qt_wrap_cpp(MOC_SOURCES ${HEADERS})
-endif()
-
-# Generate UIC files
-if(QT_VERSION_MAJOR EQUAL 6)
     qt6_wrap_ui(UIC_SOURCES ${UI_FILES})
-else()
-    qt_wrap_ui(UIC_SOURCES ${UI_FILES})
-endif()
-
-# Generate resources
-if(QT_VERSION_MAJOR EQUAL 6)
     qt_add_resources(RESOURCE_SOURCES ${RESOURCE_FILES})
 else()
-    qt_add_resources(RESOURCE_SOURCES ${RESOURCE_FILES})
+    qt5_wrap_cpp(MOC_SOURCES ${HEADERS})
+    qt5_wrap_ui(UIC_SOURCES ${UI_FILES})
+    qt5_add_resources(RESOURCE_SOURCES ${RESOURCE_FILES})
 endif()
 
 # Add the executable
