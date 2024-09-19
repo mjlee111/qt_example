@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Try to find Qt6 first, if not found, try Qt5
-find_package(Qt6 COMPONENTS Widgets SerialPort QUIET)
+find_package(Qt6 COMPONENTS Widgets OpenGLWidgets SerialPort QUIET)
 if(Qt6_FOUND)
     set(QT_VERSION_MAJOR 6)
     message(STATUS "Found Qt6: ${Qt6_VERSION}")
@@ -66,7 +66,7 @@ add_executable(${PROJECT_NAME} ${SOURCES} ${MOC_SOURCES} ${UIC_SOURCES} ${RESOUR
 
 # Link the appropriate Qt Widgets library
 if(QT_VERSION_MAJOR EQUAL 6)
-    target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::SerialPort OpenGL::GL)
+    target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::SerialPort Qt6::OpenGLWidgets OpenGL::GL)
 else()
     target_link_libraries(${PROJECT_NAME} Qt5::Widgets Qt5::SerialPort OpenGL::GL)
 endif()
