@@ -6,6 +6,7 @@
 - [Keyboard](#keyboard)
 - [Serial](#serial)
 - [Astar](#Astar)
+- [IMU](#imu)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -225,6 +226,86 @@
 - **Error Feedback:**
   - If no valid path is found or if the start/end points are not set, a message will be displayed.
 
+## IMU (Inertial Measurement Unit) Package
+### Features
+- **Serial Port Communication**: Extends the functionality of the Serial project to communicate with EBIMU sensors. Allows communication over various baud rates, with support for up to 115200.
+- **Data Reception & Packet Analysis**: Reads incoming data from EBIMU sensors via serial communication, decodes sensor packets, and displays the values of parameters like acceleration, gyroscope, and magnetometer.
+- **Real-time Data Visualization**: Utilizes OpenGL to render a 3D cube that reacts in real-time to changes in roll, pitch, and yaw values, providing visual feedback on the sensor's orientation.
+- **Device Management**: Lists available serial ports and allows opening or closing the connection with EBIMU sensors. Automatically handles packet structure and parsing for seamless communication.
+- **Automatic Scroll**: Ensures that the `QTextEdit` view, used for displaying raw data, automatically scrolls to the latest received data from the sensor.
+- **Status Indication**: Provides visual feedback on sensor data reception by changing the background color of the status label.
+- **Roll, Pitch, and Yaw Calculation**: Automatically computes roll, pitch, and yaw values from IMU sensor data, translating raw measurements into meaningful orientation angles.
+  
+### Installation and Running
+#### Prerequisites
+
+- CMake
+- Qt 5 or Qt 6 -> [Qt Docs][qtlink]
+- OpenGL for 3D visualization of IMU data
+- EBIMU sensor (or any 9DOF sensor with compatible communication protocols)
+- For Windows: Ensure the Qt installation includes the Qt Serial Port and OpenGL modules.
+- For Linux: Install the libqt5serialport5 (or 6) and OpenGL libraries.
+
+#### Build and Run
+
+1. **Clone the Source Code**
+    ```bash
+    $ git clone https://github.com/mjlee111/qt_example.git
+    ```
+
+2. **Build**
+   
+    - Linux
+    ```bash
+    $ cd qt_example/IMU
+    $ mkdir build && cd build
+    $ cmake ..
+    $ make
+    ```
+    - Windows
+    ```bash
+    $ cd qt_example/IMU
+    $ mkdir build && cd build
+    $ cmake -G "Visual Studio 16 2019" ..
+    $ cmake --build . --config Release
+    ```
+
+3. **Run**
+    - Linux
+    ```bash
+    ./IMU
+    ```
+    - Windows
+
+    Double-click the executable generated after building, or run it from the Command Prompt.
+
+    - Test the real-time visualization with an EBIMU sensor to see live changes in the orientation of the 3D cube.
+
+<div align=center>
+
+![IMU-run-image](https://github.com/mjlee111/qt_example/blob/master/IMU/docs/run.gif)
+</div>
+
+#### Usage
+
+- **Connect to IMU Sensor:**
+    * Select the EBIMU sensor's serial port from the dropdown menu.
+    * Set the desired baud rate and communication parameters.
+    * Click "OPEN" to establish the connection.
+
+- **Data Reception:**
+    * Incoming IMU data, including acceleration, gyroscope, and magnetometer values, will be displayed in the `QTextEdit` widget.
+    * The widget automatically scrolls to the latest data.
+
+- **3D Visualization:**
+    * As the sensor's orientation changes, the 3D cube rendered using OpenGL will react in real-time, rotating to reflect the changes in roll, pitch, and yaw.
+  
+- **Device Status:**
+    * The status label will turn green when data is received from the IMU.
+    * It will return to its default color when no data is present.
+
+- **Clear Display:**
+    * Click the "CLEAR" button to clear the data from the display.
 
 ## Contributing
 Feel free to submit issues, feature requests, and pull requests to improve the package.
