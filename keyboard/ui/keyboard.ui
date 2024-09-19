@@ -28,7 +28,7 @@
 color: rgb(255, 255, 255)</string>
   </property>
   <property name="toolButtonStyle">
-   <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
+   <enum>Qt::ToolButtonIconOnly</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="btn1">
@@ -1245,7 +1245,7 @@ b</string>
      <rect>
       <x>10</x>
       <y>305</y>
-      <width>250</width>
+      <width>601</width>
       <height>16</height>
      </rect>
     </property>
@@ -1267,10 +1267,7 @@ b</string>
 color: rgb(255, 255, 255)</string>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Shape::Box</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
+     <enum>QFrame::NoFrame</enum>
     </property>
     <property name="text">
      <string>_</string>
