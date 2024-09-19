@@ -89,10 +89,7 @@ void Serial::writeToDevice(const QString& data)
 
 void Serial::writeToDevice(const QByteArray& byte_data)
 {
-  if (serialPort->isOpen())
-  {
-    serialPort->write(byte_data);
-  }
+  serialPort->write(byte_data);
 }
 
 void Serial::closeDevice()
@@ -217,13 +214,16 @@ void Serial::on_rate_currentIndexChanged(int index)
 
 void Serial::on_write_btn_clicked()
 {
-  ui->tx->setStyleSheet("QLabel {background-color: rgb(0, 0, 254)}");
-  writeToDevice(ui->write_data->toPlainText());
-  if (clearWrite)
+  if (serialPort->isOpen())
   {
-    ui->write_data->clear();
+    ui->tx->setStyleSheet("QLabel {background-color: rgb(0, 0, 254)}");
+    writeToDevice(ui->write_data->toPlainText());
+    if (clearWrite)
+    {
+      ui->write_data->clear();
+    }
+    colorResetTimer2->start(50);
   }
-  colorResetTimer2->start(50);
 }
 
 void Serial::appendToLabel(QLabel* label, const QString& textToAppend)
