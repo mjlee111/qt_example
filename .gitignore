@@ -9,3 +9,5 @@ Astar/build/
 Astar/CMakeLists.txt.user
 
 *.user
+
+IMU/build/
