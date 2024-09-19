@@ -228,7 +228,7 @@
 
 ## IMU (Inertial Measurement Unit) Package
 ### Features
-- **Serial Port Communication**: Extends the functionality of the Serial project to communicate with EBIMU sensors. Allows communication over various baud rates, with support for up to 115200.
+- **Serial Port Communication**: Extends the functionality of the Serial project to communicate with [EBIMU][ebimu] sensors. Allows communication over various baud rates, with support for up to 115200.
 - **Data Reception & Packet Analysis**: Reads incoming data from EBIMU sensors via serial communication, decodes sensor packets, and displays the values of parameters like acceleration, gyroscope, and magnetometer.
 - **Real-time Data Visualization**: Utilizes OpenGL to render a 3D cube that reacts in real-time to changes in roll, pitch, and yaw values, providing visual feedback on the sensor's orientation.
 - **Device Management**: Lists available serial ports and allows opening or closing the connection with EBIMU sensors. Automatically handles packet structure and parsing for seamless communication.
@@ -317,5 +317,6 @@ This project is licensed under the MIT License - see the [LICENSE][LICENSE] file
 For any questions or feedback, please contact [menggu1234@naver.com][email].
 
 [qtlink]: https://doc.qt.io/
+[ebimu]: https://www.e2box.co.kr/
 [LICENSE]: https://github.com/mjlee111/qt_example/blob/master/LICENSE
 [email]: mailto:menggu1234@naver.com
