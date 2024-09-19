@@ -2,16 +2,22 @@
 
 `qt_example` a simple application developed using the Qt framework. This project implements a application with various functionalities.
 
+
+<div align=center>
+<img src="https://img.shields.io/badge/C++-00599C?style=flat&logo=cplusplus&logoColor=white"/> 
+<img src="https://img.shields.io/badge/Qt-41CD52?&style=flat&logo=qt&logoColor=white"/> 
+</div>
+
 ## Table of Contents
-- [Keyboard](#keyboard)
-- [Serial](#serial)
-- [Astar](#Astar)
-- [IMU](#imu)
+- [Keyboard](#️-keyboard)
+- [Serial](#-serial)
+- [Astar](#-a-pathfinding)
+- [IMU](#-imu-inertial-measurement-unit)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
-## Keyboard
+## ⌨️ Keyboard
 ### Features
 
 - **Keyboard Layout**: Supports qwerty and Korean keyboard layouts.
@@ -74,7 +80,7 @@
 - **Language Switching**: Use the "Kor" or "영어" button to switch between Korean and English keyboard layouts.
 - **Caps Lock**: Toggle Caps Lock to switch between uppercase and lowercase text.
 
-## Serial
+## 🔌 Serial
 ### Features
 - **Serial Port Communication**: Establishes communication with serial devices using various baud rates(up to 115200).
 - **Data Reception**: Reads and displays incoming serial data in a `QTextEdit`.
@@ -152,7 +158,7 @@
 - **Clear Display:**
     * Click the "CLEAR" button to clear the data from the display
 
-## A* Pathfinding
+## 🧭 A* Pathfinding
 ### Features
 - **Grid-Based Pathfinding**: Implements the A* pathfinding algorithm to find the shortest path on a grid.
 - **Dynamic Grid Visualization**: Displays a dynamic grid in the GUI where users can set obstacles, start, and end points.
@@ -226,7 +232,7 @@
 - **Error Feedback:**
   - If no valid path is found or if the start/end points are not set, a message will be displayed.
 
-## IMU (Inertial Measurement Unit) Package
+## 📐 IMU (Inertial Measurement Unit)
 ### Features
 - **Serial Port Communication**: Extends the functionality of the Serial project to communicate with [EBIMU][ebimu] sensors. Allows communication over various baud rates, with support for up to 115200.
 - **Data Reception & Packet Analysis**: Reads incoming data from EBIMU sensors via serial communication, decodes sensor packets, and displays the values of parameters like acceleration, gyroscope, and magnetometer.
