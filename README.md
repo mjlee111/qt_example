@@ -83,7 +83,7 @@
 
 ## 🔌 Serial
 ### Features
-- **Serial Port Communication**: Establishes communication with serial devices using various baud rates(up to 115200).
+- **Serial Port Communication**: Establishes communication with serial devices using various baud rates.
 - **Data Reception**: Reads and displays incoming serial data in a `QTextEdit`.
 - **Data Transmission**: Allows sending data to the serial device via the `writeToDevice()` methods.
 - **Device Management**: Lists available serial ports and allows opening or closing the connection.
