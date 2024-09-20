@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/image">
-        <file>images/astar.png</file>
-    </qresource>
-</RCC>
