@@ -13,6 +13,7 @@
 - [Serial](#-serial)
 - [Astar](#-a-pathfinding)
 - [IMU](#-imu-inertial-measurement-unit)
+- [3DOF_robot_arm](#-3dof-robot-arm)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
