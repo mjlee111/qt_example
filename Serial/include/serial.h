@@ -68,7 +68,6 @@ private:
   bool openDevice(const QString& portName, const int baudRate);
   void closeDevice();
 
-  QSerialPort::BaudRate convertIntToBaudRate(int baudRate);
   void appendToLabel(QLabel* label, const QString& textToAppend);
   void appendToTextEdit(QTextEdit* textEdit, const QString& textToAppend);
 };

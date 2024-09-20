@@ -45,7 +45,7 @@ bool IMU::openDevice(const QString& portName, const int baudRate)
   }
 
   serialPort->setPortName(portName);
-  serialPort->setBaudRate(convertIntToBaudRate(baudRate));
+  serialPort->setBaudRate(baudRate);
   serialPort->setDataBits(QSerialPort::Data8);
   serialPort->setParity(QSerialPort::NoParity);
   serialPort->setStopBits(QSerialPort::OneStop);
@@ -150,41 +150,22 @@ QStringList IMU::getAvailableDevices()
 
 void IMU::setupBaudRateComboBox(QComboBox* comboBox)
 {
-  comboBox->addItem("1200", QSerialPort::Baud1200);
-  comboBox->addItem("2400", QSerialPort::Baud2400);
-  comboBox->addItem("4800", QSerialPort::Baud4800);
-  comboBox->addItem("9600", QSerialPort::Baud9600);
-  comboBox->addItem("19200", QSerialPort::Baud19200);
-  comboBox->addItem("38400", QSerialPort::Baud38400);
-  comboBox->addItem("57600", QSerialPort::Baud57600);
-  comboBox->addItem("115200", QSerialPort::Baud115200);
+  comboBox->addItem("1200", 1200);
+  comboBox->addItem("2400", 2400);
+  comboBox->addItem("4800", 4800);
+  comboBox->addItem("9600", 9600);
+  comboBox->addItem("19200", 19200);
+  comboBox->addItem("38400", 38400);
+  comboBox->addItem("57600", 57600);
+  comboBox->addItem("115200", 115200);
+  comboBox->addItem("230400", 230400);
+  comboBox->addItem("460800", 460800);
+  comboBox->addItem("921600", 921600);
+  comboBox->addItem("1000000", 1000000);
+  comboBox->addItem("2000000", 2000000);
+  comboBox->addItem("4000000", 4000000);
 
-  comboBox->setCurrentIndex(comboBox->findData(QSerialPort::Baud9600));
-}
-
-QSerialPort::BaudRate IMU::convertIntToBaudRate(int baudRate)
-{
-  switch (baudRate)
-  {
-    case 1200:
-      return QSerialPort::Baud1200;
-    case 2400:
-      return QSerialPort::Baud2400;
-    case 4800:
-      return QSerialPort::Baud4800;
-    case 9600:
-      return QSerialPort::Baud9600;
-    case 19200:
-      return QSerialPort::Baud19200;
-    case 38400:
-      return QSerialPort::Baud38400;
-    case 57600:
-      return QSerialPort::Baud57600;
-    case 115200:
-      return QSerialPort::Baud115200;
-    default:
-      return QSerialPort::Baud9600;
-  }
+  comboBox->setCurrentIndex(comboBox->findData("9600"));
 }
 
 void IMU::on_device_btn_clicked()
