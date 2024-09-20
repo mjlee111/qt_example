@@ -1,15 +1,8 @@
 
 .vscode/
 
-keyboard/build/
-keyboard/CMakeLists.txt.user
-Serial/build/
-Serial/CMakeLists.txt.user
-Astar/build/
-Astar/CMakeLists.txt.user
+*/build
 
 *.user
 
-IMU/build/
 
-3DOF_robot_arm/build/
