@@ -313,6 +313,68 @@
 - **Clear Display:**
     * Click the "CLEAR" button to clear the data from the display.
 
+## 🤖 3DOF Robot Arm
+### Features
+
+- **Robot Arm Control**: Control the angles of a 3DOF robotic arm using QSlider.
+- **Link Length Customization**: Adjust the length of each arm link using QSpinBox.
+- **Real-Time Visualization**: Displays the robotic arm in a `QGraphicsView` with real-time updates.
+- **Joint and End Effector Visualization**: Each joint is marked with a blue circle, and the end effector is marked with a red circle.
+- **Reset Functionality**: Reset the arm's position and link lengths to default values.
+
+### Installation and Running
+
+#### Prerequisites
+
+- CMake
+- Qt 5 or Qt 6 -> [Qt Docs][qtlink]
+
+#### Build and Run
+
+1. **Clone the Source Code**
+    ```bash
+    $ git clone https://github.com/mjlee111/qt_example.git
+    ```
+
+2. **Build**
+
+    - Linux
+    ```bash
+    $ cd qt_example/3DOF_robot_arm
+    $ mkdir build && cd build
+    $ cmake ..
+    $ make
+    ```
+    - Windows
+    ```bash
+    $ cd qt_example/3DOF_robot_arm
+    $ mkdir build && cd build
+    $ cmake -G "Visual Studio 16 2019" ..
+    $ cmake --build . --config Release
+    ```
+
+3. **Run**
+
+    - Linux
+    ```bash
+    ./3DOF_robot_arm
+    ```
+    - Windows
+
+    Double-click the executable generated after building, or run it from the Command Prompt.
+
+<div align=center>
+
+![robot-arm-run-image](https://github.com/mjlee111/qt_example/blob/master/3DOF_robot_arm/docs/run.gif)
+</div>
+
+#### Usage
+
+- **Joint Angle Control**: Use the sliders to adjust the angles of the three joints. The corresponding angle value is displayed in real-time next to each slider.
+- **Link Length Customization**: Adjust the length of each link using the spin boxes labeled `link1`, `link2`, and `link3`. The arm will update dynamically based on the entered values.
+- **Generate Arm**: Click the "Generate Arm" button after setting the link lengths to visualize the updated robotic arm.
+- **Reset Arm**: Click the "Reset" button to reset the arm's position and link lengths to their default values.
+
 ## Contributing
 Feel free to submit issues, feature requests, and pull requests to improve the package.
 
