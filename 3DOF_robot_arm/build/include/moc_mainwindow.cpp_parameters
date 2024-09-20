@@ -1,5 +1,0 @@
--I/home/m/qt_example/3DOF_robot_arm/include
--I/home/m/qt_example/3DOF_robot_arm/build
--o
-/home/m/qt_example/3DOF_robot_arm/build/include/moc_mainwindow.cpp
-/home/m/qt_example/3DOF_robot_arm/include/mainwindow.hpp

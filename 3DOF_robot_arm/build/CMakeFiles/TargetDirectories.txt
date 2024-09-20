@@ -1,3 +1,0 @@
-/home/m/qt_example/3DOF_robot_arm/build/CMakeFiles/rebuild_cache.dir
-/home/m/qt_example/3DOF_robot_arm/build/CMakeFiles/edit_cache.dir
-/home/m/qt_example/3DOF_robot_arm/build/CMakeFiles/3DOF_robot_arm.dir

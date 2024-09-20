@@ -11,3 +11,5 @@ Astar/CMakeLists.txt.user
 *.user
 
 IMU/build/
+
+3DOF_robot_arm/build/
