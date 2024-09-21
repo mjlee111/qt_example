@@ -289,8 +289,7 @@
     - Test the real-time visualization with an EBIMU sensor to see live changes in the orientation of the 3D cube.
 
 <div align=center>
-
-![IMU-run-image](https://github.com/mjlee111/qt_example/blob/master/IMU/docs/run.gif)
+    <img src="https://github.com/mjlee111/qt_example/blob/master/IMU/docs/run.gif" alt="IMU-run-image">
 </div>
 
 #### Usage
@@ -375,6 +374,79 @@
 - **Link Length Customization**: Adjust the length of each link using the spin boxes labeled `link1`, `link2`, and `link3`. The arm will update dynamically based on the entered values.
 - **Generate Arm**: Click the "Generate Arm" button after setting the link lengths to visualize the updated robotic arm.
 - **Reset Arm**: Click the "Reset" button to reset the arm's position and link lengths to their default values.
+
+## 📝 TextEditor
+
+### Features
+
+- **File Open**: Opens `.txt`, `.c`, and `.cpp` files using a file dialog.
+- **File Save**: Saves the opened file or saves it under a new name.
+- **File Editing**: Displays file content in a `QTextEdit` widget, allowing for easy text editing.
+- **Read-Only Mode**: Files can be opened in read-only mode or edited based on the user's actions.
+- **Folder Selection**: Allows folder selection through a folder dialog.
+- **GUI Components**: Uses a clean and simple GUI with `QMainWindow`, `QTextEdit`, `QPushButton`, and `QLabel`.
+
+### Installation and Running
+
+#### Prerequisites
+
+- CMake
+- Qt 5 or Qt 6 -> [Qt Docs][qtlink]
+- X11 & XTest (required only for Linux)
+
+    ```bash
+    $ sudo apt-get install libx11-dev libxtst-dev
+    ```
+
+#### Build and Run
+
+1. **Clone the Source Code**
+
+    ```bash
+    $ git clone https://github.com/mjlee111/qt_example.git
+    ```
+
+2. **Build**
+
+    - **Linux**
+    ```bash
+    $ cd qt_example/TextEditor
+    $ mkdir build && cd build
+    $ cmake ..
+    $ make
+    ```
+
+    - **Windows**
+    ```bash
+    $ cd qt_example/TextEditor
+    $ mkdir build && cd build
+    $ cmake -G "Visual Studio 16 2019" ..
+    $ cmake --build . --config Release
+    ```
+
+3. **Run**
+
+    - **Linux**
+    ```bash
+    ./texteditor
+    ```
+
+    - **Windows**
+
+    Double-click the executable generated after building, or run it from the Command Prompt.
+
+<div align=center>
+
+![robot-arm-run-image](https://github.com/mjlee111/qt_example/blob/master/TextEditor/docs/run.gif)
+</div>
+
+#### Usage
+
+- **Opening a File**: Use the "Open" button to browse for `.txt`, `.c`, or `.cpp` files and display their content in the editor.
+- **Editing a File**: Once a file is opened, its content can be modified in the text editor. The "Save" button is enabled to allow saving changes.
+- **Save As**: Use the "Save As" button to save the current file under a new name or location.
+- **Close File**: Clears the text editor and disables saving functionality if no file is open.
+- **Folder Selection**: Click the "Open Folder" button to select a folder and retrieve its path.
 
 ## Contributing
 Feel free to submit issues, feature requests, and pull requests to improve the package.
