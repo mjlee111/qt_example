@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.5)
 
 # Project name
-project(serial VERSION 1.0 LANGUAGES CXX)
+project(TextEditor VERSION 1.0 LANGUAGES CXX)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Try to find Qt6 first, if not found, try Qt5
-find_package(Qt6 COMPONENTS Widgets REQUIRED)
+find_package(Qt6 COMPONENTS Widgets QUIET)
 if(Qt6_FOUND)
     set(QT_VERSION_MAJOR 6)
     message(STATUS "Found Qt6: ${Qt6_VERSION}")
