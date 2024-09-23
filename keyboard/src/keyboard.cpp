@@ -241,6 +241,43 @@ void keyboard::setButtonTexts(QList<QPushButton*>& buttons, const std::vector<st
   }
 }
 
+bool keyboard::isCapsLockOn()
+{
+#if defined(_WIN32)
+  return (GetAsyncKeyState(VK_CAPITAL) & 0x0001) != 0;
+#elif defined(__linux__)
+  Display* display = XOpenDisplay(nullptr);
+  if (display == nullptr)
+  {
+    return false;
+  }
+
+  XModifierKeymap* keymap = XGetModifierMapping(display);
+  if (keymap == nullptr)
+  {
+    XCloseDisplay(display);
+    return false;
+  }
+
+  KeyCode capsLockKeyCode = XKeysymToKeycode(display, XK_Caps_Lock);
+
+  bool isCapsLockOn = false;
+  for (int i = 0; i < keymap->max_keypermod; ++i)
+  {
+    if (keymap->modifiermap[i] == capsLockKeyCode)
+    {
+      isCapsLockOn = true;
+      break;
+    }
+  }
+
+  XFreeModifiermap(keymap);
+  XCloseDisplay(display);
+
+  return isCapsLockOn;
+#endif
+}
+
 void keyboard::changeLang()
 {
   QList<QPushButton*> buttons;

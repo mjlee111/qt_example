@@ -56,7 +56,6 @@ private:
   void on_button_released(QPushButton* button);
   void handleButtonClick(QPushButton* button);
   void appendTextToLabel(const std::string& text);
-  void updateTextLabel(const QString& text);
   void handleBackspace();
   void handleTab();
   void handleEnter();
@@ -66,48 +65,8 @@ private:
   void updateCapsLockButtonStyle();
   void connectAllButtons();
 
-  void appendKoreanText(const QString& text);
-  void handleKoreanInput(const QString& text);
+  bool isCapsLockOn();
 
-#if defined(_WIN32)
-  bool isCapsLockOn()
-  {
-    return (GetAsyncKeyState(VK_CAPITAL) & 0x0001) != 0;
-  }
-#elif defined(__linux__)
-  bool isCapsLockOn()
-  {
-    Display* display = XOpenDisplay(nullptr);
-    if (display == nullptr)
-    {
-      return false;
-    }
-
-    XModifierKeymap* keymap = XGetModifierMapping(display);
-    if (keymap == nullptr)
-    {
-      XCloseDisplay(display);
-      return false;
-    }
-
-    KeyCode capsLockKeyCode = XKeysymToKeycode(display, XK_Caps_Lock);
-
-    bool isCapsLockOn = false;
-    for (int i = 0; i < keymap->max_keypermod; ++i)
-    {
-      if (keymap->modifiermap[i] == capsLockKeyCode)
-      {
-        isCapsLockOn = true;
-        break;
-      }
-    }
-
-    XFreeModifiermap(keymap);
-    XCloseDisplay(display);
-
-    return isCapsLockOn;
-  }
-#endif
   bool caps = false;
   bool shift = false;
   bool lang = false;  // false = eng, true = kor
